@@ -63,6 +63,8 @@
         }
 
         .card-wrapper {
+            flex-wrap: nowrap;
+
             @media all and (min-width: $sm) {
                 width: 50%;
             }
@@ -75,6 +77,17 @@
     .next {
         font-size: 2rem;
         width: 5rem;
-        padding-left: .5rem;
+        padding-left: 1rem;
+        cursor: pointer;
+    }
+</style>
+
+<style lang="scss">
+    .sites__list {
+        .card-wrapper {
+            .card {
+                width: calc(100% - 5rem);
+            }
+        }
     }
 </style>
