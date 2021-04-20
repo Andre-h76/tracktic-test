@@ -4,7 +4,10 @@
             <select @change="sortBy">
                 <option v-for="(option, index) in sortByOptions" :key="index" :value="option.value">{{ option.name }}</option>
             </select>
-            <label v-for="option in orderByOptions" :key="option"><input type="radio" name="order" :value="option" @change="orderBy" />{{ option }}</label>
+            <label v-for="(option, index) in orderByOptions" :key="option">
+                <input :disabled="!sortByVal" :checked="!index" type="radio" name="order" :value="option" @change="orderBy" />
+                {{ option }}
+            </label>
         </div>
     </div>
 </template>
@@ -31,7 +34,7 @@
             return {
                 sortByOptions,
                 orderByOptions,
-                orderByModel: ''
+                sortByVal: ''
             }
         },
         methods: {
@@ -40,6 +43,7 @@
                     this.$store.dispatch('sortBy', '');
                 }
                 this.$store.dispatch('sortBy', e.target.value);
+                this.sortByVal = e.target.value;
             },
             orderBy(e) {
                 this.$store.dispatch('orderBy', e.target.value);
