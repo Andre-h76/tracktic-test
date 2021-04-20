@@ -2,7 +2,7 @@
     <div class="filter">
         <div class="filter-wrapper">
             <select @change="sortBy">
-                <option v-for="(option) in sortByOptions" :key="option" :value="option.value">{{ option.name }}</option>
+                <option v-for="(option, index) in sortByOptions" :key="index" :value="option.value">{{ option.name }}</option>
             </select>
             <label v-for="option in orderByOptions" :key="option"><input type="radio" name="order" :value="option" @change="orderBy" />{{ option }}</label>
         </div>

@@ -49,7 +49,7 @@
         methods: {
             setPage(page) {
                 this.$router.push({path: `/${page}`});
-                this.$store.dispatch('getSites', page);
+                this.$store.dispatch('fetchSites', page);
             }
         }
     }
