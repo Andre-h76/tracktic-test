@@ -21,7 +21,7 @@ const routes = [
   }
 ];
 
-const router = new VueRouter({ routes, mode: 'history' });
+const router = new VueRouter({ routes });
 
 Vue.config.productionTip = false
 
